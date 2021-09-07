@@ -8,7 +8,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +21,14 @@ class RootViewController: UIViewController {
         splitVC.preferredSplitBehavior = .tile
         splitVC.presentsWithGesture = false
         splitVC.didMove(toParent: self)
-        
+
         let memoListVC = MemoTableViewController(isCompact: false)
         splitVC.setViewController(memoListVC, for: .primary)
-        
+
         let memoDetailVC = MemoDetailViewController()
         let memoDetailNavgation = UINavigationController(rootViewController: memoDetailVC)
         splitVC.setViewController(memoDetailNavgation, for: .secondary)
-        
+
         let memoListCompactVC = MemoTableViewController(isCompact: true)
         let memoListCompactNavigation = UINavigationController(rootViewController: memoListCompactVC)
         splitVC.setViewController(memoListCompactNavigation, for: .compact)

@@ -9,11 +9,11 @@ import UIKit
 
 struct MemoTableViewModel {
     weak var delegate: MemoTableViewModelDelegate?
-    
+
     func requestData() {
         let decoder = JSONDecoder()
         let memoDataIdentifier = "sample"
-        
+
         guard let dataAsset = NSDataAsset(name: memoDataIdentifier),
               let memos = try? decoder.decode([Memo].self, from: dataAsset.data) else {
             return
